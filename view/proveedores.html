@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Conexión al plugin datatable -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css"
+		/>
+		<!-- Boxicons CSS (iconos) -->
+		<link
+			href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<!-- === link cdn de iconos de font-awesome === -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+		/>
+		<!-- === Bootstrap CSS === -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<!-- === link estilos css === -->
+		<link rel="stylesheet" href="/css/estilos.css" />
+		<title>Módulo de proveedores</title>
+	</head>
+	<body>
+		<!-- ==== Menú lateral ==== -->
+		<nav class="main-menu">
+			<ul>
+				<!-- ==== apartado de inicio ==== -->
+				<li>
+					<a href="/view/Panel principal.html">
+						<i class="fa fa-home fa-2x"></i>
+						<span class="nav-text"> Inicio </span>
+					</a>
+				</li>
+				<!-- ==== apartado de mi perfil ==== -->
+				<li>
+					<a href="/view/mi perfil.html">
+						<i class="fa fa-user fa-2x"></i>
+						<span class="nav-text"> Mi perfil </span>
+					</a>
+				</li>
+				<!-- ==== apartado de usuarios ==== -->
+				<li>
+					<a href="/view/usuarios.html" class="">
+						<i class="fa fa-user-gear fa-2x"></i>
+						<span class="nav-text"> Usuarios </span>
+					</a>
+				</li>
+				<!-- ==== apartado de empleados ==== -->
+				<li>
+					<a href="/view/empleados.html">
+						<i class="fa fa-solid fa-user-tie fa-2x"></i>
+						<span class="nav-text"> Empleados </span>
+					</a>
+				</li>
+				</li>
+				<!-- ==== apartado de clientes ==== -->
+				<li>
+					<a href="/view/clientes.html">
+						<i class="fa fa-user-group fa-2x"></i>
+						<span class="nav-text"> Clientes </span>
+					</a>
+				</li>
+				<!-- ==== apartado del inventario ==== -->
+				<li>
+					<a href="/view/inventario.html">
+						<i class="fa fa-box-archive fa-2x"></i>
+						<span class="nav-text"> Inventario </span>
+					</a>
+				</li>
+				<!-- ==== apartado de proveedores ==== -->
+				<li>
+					<a href="#" class="apart-activo">
+						<i class="fa fa-dolly fa-2x"></i>
+						<span class="nav-text"> Proveedores </span>
+					</a>
+				</li>
+				<!-- ==== apartado de cotizaciones ==== -->
+				<li>
+					<a href="/view/cotizaciones.html">
+						<i class="fa fa-file-invoice fa-2x"></i>
+						<span class="nav-text"> Cotizaciones </span>
+					</a>
+				</li>
+			</ul>
+			<!-- ==== apartado de cerrar sesión ==== -->
+			<ul class="logout">
+				<li>
+					<a href="#" data-bs-toggle="modal" data-bs-target="#cerrar-sesion">
+						<i class="fa fa-power-off fa-2x"></i>
+						<span class="nav-text"> Cerrar sesión </span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- ========== Grilla o tabla de Proveedores ========== -->
+		<div class="box-table">
+			<!-- ==== Titulo ==== -->
+			<h1 class="title-estilo pt-5">Proveedores</h1>
+			<!-- Button modal agregar -->
+			<div class="btns-modulo">
+				<button
+					id="#"
+					type="button"
+					class="btn btn-success btn-nuevo"
+					data-bs-toggle="modal"
+					data-bs-target="#agregar"
+				>
+					Agregar nuevo
+				</button>
+				<div class="container-datos">
+					<table
+						id="datatable"
+						class="table table-striped table-hover mt-4"
+					>
+						<!-- ==== campos de la tabla ==== -->
+						<thead>
+							<tr class="table-estilo" id="">
+								<th>Id</th>
+								<th>Tipo de proveedor</th>
+								<th>Tipo de identificación</th>
+								<th>N° identificación</th>
+								<th>Nombre</th>
+								<th>Dirección</th>
+								<th>Teléfono</th>
+								<th>Correo</th>
+								<th>Estado</th>
+								<th>Acciones</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td>
+									<!-- Button acción Editar -->
+									<a
+										href="#"
+										data-bs-toggle="modal"
+										data-bs-target="#editar"
+										class="bx bx-sm btn-editar"
+										><i class="fa-sharp fa-solid fa-pen-to-square fa-xs"></i
+									></a>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</div>
+			</div>
+		</div>
+		<!-- -------------------------------------------- -->
+		<!-- ==== modal de cerrar sesión ==== -->
+		<div
+			class="modal fade"
+			id="cerrar-sesion"
+			tabindex="-1"
+			aria-labelledby="exampleModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body" style="text-align: center">
+						<!-- === Titulo del modal === -->
+						<h5 class="parrafo-eliminar">¿Deseas salir del sistema?</h5>
+						<a href="/index.html"
+							><button type="button" class="btn btn-danger mt-3">
+								Salir
+							</button></a
+						>
+						<a href="/view/proveedores.html">
+							<button type="button" class="btn btn-secondary mt-3">
+								Cancelar
+							</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ========== ---- ========== -->
+		<span class="icon-eye eye-repetirC"></span>
+		<!-- ========== Modal Agregar nuevo ========== -->
+		<div
+			class="modal fade"
+			id="agregar"
+			tabindex="-1"
+			aria-labelledby="exampleModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">
+						<!-- === Titulo del modal === -->
+						<h3 class="modal-title text-center" id="exampleModalLabel">
+							Agregar un nuevo proveedor
+						</h3>
+						<!-- === formularios agregar nuevo === -->
+						<form action="#" method="" class="form-modal">
+							<!-- === Tipo proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<select
+										id="#"
+										class="form-select"
+										aria-label="Default select example"
+										required
+									>
+										<option selected>Tipo de proveedor *</option>
+										<option value="1">Persona natural</option>
+										<option value="2">Persona Juridica</option>
+									</select>
+								</div>
+							</div>
+							<!-- === tipo de indentidad proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<select
+										id="#"
+										class="form-select"
+										aria-label="Default select example"
+										required
+									>
+										<option selected>Tipo de identidad *</option>
+										<option value="1">CC</option>
+										<option value="2">NIT</option>
+										<option value="3">TI</option>
+									</select>
+								</div>
+							</div>
+							<!-- === N° identidad proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<input
+										id="#"
+										type="text"
+										class="form-control from-dato"
+										placeholder="Número del documeneto *"
+										aria-label="Número del documeneto"
+										maxlength="11"
+										required
+									/>
+								</div>
+							</div>
+							<!-- === Nombre proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<input
+										id="#"
+										type="text"
+										class="form-control from-dato"
+										placeholder="Nombre *"
+										aria-label="Nombre"
+									/>
+								</div>
+							</div>
+							<!-- === Dirección proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<input
+										id="#"
+										type="text"
+										class="form-control from-dato"
+										placeholder="Dirección *"
+										aria-label="Dirección"
+										required
+									/>
+								</div>
+							</div>
+							<!-- === Teléfono proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<input
+										id="#"
+										type="tel"
+										class="form-control from-dato"
+										placeholder="Teléfono *"
+										aria-label="Teléfono"
+									/>
+								</div>
+							</div>
+							<!-- === Correo proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<input
+										id="#"
+										type="email"
+										class="form-control from-dato"
+										placeholder="Correo electrónico *"
+										aria-label="Correo"
+										required
+									/>
+								</div>
+							</div>
+							<!-- === Estado proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<select
+										id="#"
+										class="form-select"
+										aria-label="Default select example"
+										required
+									>
+										<option selected>Seleccione estado *</option>
+										<option value="1">Activo</option>
+										<option value="2">Inactivo</option>
+									</select>
+								</div>
+							</div>
+							<button
+								id="#"
+								class="btn btn-secondary btn-modal"
+								type="submit"
+								onclick="guardar();"
+							>
+								Guardar
+							</button>
+							<button type="reset" class="btn btn-secondary mt-3">
+								Cancelar
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ========== Modal editar (acciones) ========== -->
+		<div
+			class="modal fade"
+			id="editar"
+			tabindex="-1"
+			aria-labelledby="exampleModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">
+						<!-- === Titulo del modal === -->
+						<h3 class="modal-title text-center" id="exampleModalLabel">
+							Actualizar proveedor
+						</h3>
+						<!-- === formularios agregar nuevo === -->
+						<form action="#" method="" class="form-modal">
+							<!-- === Tipo proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<select
+										id="#"
+										class="form-select"
+										aria-label="Default select example"
+										required
+									>
+										<option selected>Tipo de proveedor *</option>
+										<option value="1">Persona natural</option>
+										<option value="2">Persona Juridica</option>
+									</select>
+								</div>
+							</div>
+							<!-- === tipo de indentidad proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<select
+										id="#"
+										class="form-select"
+										aria-label="Default select example"
+										required
+									>
+										<option selected>Tipo de identidad *</option>
+										<option value="1">CC</option>
+										<option value="2">NIT</option>
+										<option value="3">TI</option>
+									</select>
+								</div>
+							</div>
+							<!-- === N° identidad proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<input
+										id="#"
+										type="text"
+										class="form-control from-dato"
+										placeholder="Número del documeneto *"
+										aria-label="Número del documeneto"
+										maxlength="11"
+										required
+									/>
+								</div>
+							</div>
+							<!-- === Nombre proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<input
+										id="#"
+										type="text"
+										class="form-control from-dato"
+										placeholder="Nombre *"
+										aria-label="Nombre"
+									/>
+								</div>
+							</div>
+							<!-- === Dirección proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<input
+										id="#"
+										type="text"
+										class="form-control from-dato"
+										placeholder="Dirección *"
+										aria-label="Dirección"
+										required
+									/>
+								</div>
+							</div>
+							<!-- === Teléfono proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<input
+										id="#"
+										type="tel"
+										class="form-control from-dato"
+										placeholder="Teléfono *"
+										aria-label="Teléfono"
+									/>
+								</div>
+							</div>
+							<!-- === Correo proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<input
+										id="#"
+										type="email"
+										class="form-control from-dato"
+										placeholder="Correo electrónico *"
+										aria-label="Correo"
+										required
+									/>
+								</div>
+							</div>
+							<!-- === Estado proveedor === -->
+							<div class="row mt-3">
+								<div class="col">
+									<select
+										id="#"
+										class="form-select"
+										aria-label="Default select example"
+										required
+									>
+										<option selected>Seleccione estado *</option>
+										<option value="1">Activo</option>
+										<option value="2">Inactivo</option>
+									</select>
+								</div>
+							</div>
+							<button
+								id="#"
+								class="btn btn-secondary btn-modal"
+								type="submit"
+								onclick="actualizar();"
+							>
+								Actualizar
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- LIBRERIA DE LAS ALERTAR PERSONALIZADAS-->
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="/js/sweetAlert.js"></script>
+		<!-- JQERY-->
+		<!-- JQERY-->
+		<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+		<!-- DATATABLES-->
+		<script src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
+		<!-- BOOTSTRAPS 5 -->
+		<script src="https://cdn.datatables.net/1.12.1/js/dataTables.bootstrap5.min.js"></script>
+		<!-- src de js-->
+		<script src="/js/main.js"></script>
+		<script src="/js/pagination.js"></script>
+		<!-- Option 1: Bootstrap Bundle with Popper -->
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

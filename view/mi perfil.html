@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Boxicons CSS -->
+		<link
+			href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css"
+			rel="stylesheet"
+		/>
+		<!-- === link cdn de iconos de font-awesome === -->
+		<link
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+		/>
+		<!-- === Bootstrap CSS === -->
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+			crossorigin="anonymous"
+		/>
+		<!-- === link estilos css === -->
+		<link rel="stylesheet" href="/css/estilos.css" />
+		<title>Mi perfil</title>
+	</head>
+	<body>
+		<!-- ==== Menú lateral ==== -->
+		<nav class="main-menu">
+			<ul>
+				<!-- ==== apartado de inicio ==== -->
+				<li>
+					<a href="/view/Panel principal.html">
+						<i class="fa fa-home fa-2x"></i>
+						<span class="nav-text"> Inicio </span>
+					</a>
+				</li>
+				<!-- ==== apartado de mi perfil ==== -->
+				<li>
+					<a href="#" class="apart-activo">
+						<i class="fa fa-user fa-2x"></i>
+						<span class="nav-text"> Mi perfil </span>
+					</a>
+				</li>
+				<!-- ==== apartado de usuarios ==== -->
+				<li>
+					<a href="/view/usuarios.html" class="">
+						<i class="fa fa-user-gear fa-2x"></i>
+						<span class="nav-text"> Usuarios </span>
+					</a>
+				</li>
+				<!-- ==== apartado de empleados ==== -->
+				<li>
+					<a href="/view/empleados.html">
+						<i class="fa fa-solid fa-user-tie fa-2x"></i>
+						<span class="nav-text"> Empleados </span>
+					</a>
+				</li>
+				<!-- ==== apartado de clientes ==== -->
+				<li>
+					<a href="/view/clientes.html">
+						<i class="fa fa-user-group fa-2x"></i>
+						<span class="nav-text"> Clientes </span>
+					</a>
+				</li>
+				<!-- ==== apartado del inventario ==== -->
+				<li>
+					<a href="/view/inventario.html">
+						<i class="fa fa-box-archive fa-2x"></i>
+						<span class="nav-text"> Inventario </span>
+					</a>
+				</li>
+				<!-- ==== apartado de proveedores ==== -->
+				<li>
+					<a href="/view/proveedores.html">
+						<i class="fa fa-dolly fa-2x"></i>
+						<span class="nav-text"> Proveedores </span>
+					</a>
+				</li>
+				<!-- ==== apartado de cotizaciones ==== -->
+				<li>
+					<a href="/view/cotizaciones.html">
+						<i class="fa fa-file-invoice fa-2x"></i>
+						<span class="nav-text"> Cotizaciones </span>
+					</a>
+				</li>
+			</ul>
+			<!-- ==== apartado de cerrar sesión ==== -->
+			<ul class="logout">
+				<li>
+					<a href="#" data-bs-toggle="modal" data-bs-target="#cerrar-sesion">
+						<i class="fa fa-power-off fa-2x"></i>
+						<span class="nav-text"> Cerrar sesión </span>
+					</a>
+				</li>
+			</ul>
+		</nav>
+		<!-- ========== datos actuales del mi perfil ========== -->
+		<div class="box-miPerfil">
+			<!-- ==== Titulo ==== -->
+			<h3 class="title-miPerfil text-center pt-5">
+				Mantenga sus datos actualizados
+			</h3>
+			<div class="container-datos">
+				<form
+					class="form-perfil d-flex justify-content-center"
+					action=""
+					method=""
+				>
+					<div class="row mt-4">
+						<div class="col">
+							<!-- === dato nombre === -->
+							<input
+								id="#"
+								type="text"
+								class="input input-datos"
+								placeholder="Nombres"
+								maxlength="26"
+								name=""
+							/>
+							<!-- === dato apellidos === -->
+							<input
+								id="#"
+								type="text"
+								class="input input-datos"
+								placeholder="Apellidos"
+								maxlength="26"
+							/>
+							<!-- === dato cargo === -->
+							<input
+								id="#"
+								type="text"
+								class="input input-datos"
+								placeholder="Cargo"
+								maxlength="26"
+							/>
+						</div>
+						<div class="col">
+							<!-- === dato direccion === -->
+							<input
+								id="#"
+								type="text"
+								class="input input-datos"
+								placeholder="Dirección"
+								maxlength="35"
+							/>
+							<!-- === dato teléfono === -->
+							<input
+								id="#"
+								type="text"
+								class="input input-datos"
+								placeholder="Teléfono"
+								maxlength="10"
+							/>
+						</div>
+						<div class="col">
+							<!-- === dato correo === -->
+							<input
+								id="#"
+								type="text"
+								class="input input-datos"
+								placeholder="Correo"
+								maxlength="30"
+							/>
+						</div>
+						<div class="row">
+							<div class="col d-flex justify-content-center pt-3">
+								<button
+									type="submit"
+									class="btn btn-perfil mt-4"
+									onclick="actualizar();"
+								>
+									Actualizar datos
+								</button>
+							</div>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<!-- -------------------------------------------- -->
+		<!-- ==== btn flotante (cambiar contraseña) ==== -->
+		<div class="contenedor">
+			<button
+				class="botonF1"
+				data-bs-toggle="modal"
+				data-bs-target="#cambiar-clave"
+			>
+				Cambiar contraseña
+			</button>
+		</div>
+		<!-- ==== modal de cerrar sesión ==== -->
+		<div
+			class="modal fade"
+			id="cerrar-sesion"
+			tabindex="-1"
+			aria-labelledby="exampleModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body" style="text-align: center">
+						<!-- === Titulo del modal === -->
+						<h5 class="parrafo-eliminar">¿Deseas salir del sistema?</h5>
+						<a href="/index.html"
+							><button type="button" class="btn btn-danger mt-3">
+								Salir
+							</button></a
+						>
+						<a href="/view/mi perfil.html">
+							<button type="button" class="btn btn-secondary mt-3">
+								Cancelar
+							</button>
+						</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- ========== Modalo cambiar contraseña ========== -->
+		<div
+			class="modal fade"
+			id="cambiar-clave"
+			tabindex="-1"
+			aria-labelledby="exampleModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">
+						<!-- === Titulo del modal === -->
+						<h5 class="modal-title text-center" id="exampleModalLabel">
+							¿Desea cambiar su contraseña?
+						</h5>
+						<!-- === formularios has olvidado tu contraseña === -->
+						<form class="form-modal" action="#" method="">
+							<!-- === Nueva contraseña === -->
+							<span class="icon-eye eye-nueva"
+								><i class="fa-regular fa-eye-slash"></i
+							></span>
+							<input
+								id="nuevaContraseña"
+								type="password"
+								class="input input-modal"
+								placeholder="Nueva contraseña"
+								maxlength="20"
+								name="Nueva contraseña"
+								required
+							/>
+							<!-- === Repetir contraseña === -->
+							<span class="icon-eye eye-repetirC"
+								><i class="fa-regular fa-eye-slash"></i
+							></span>
+							<input
+								id="repetirContraseña"
+								type="password"
+								class="input input-modal"
+								placeholder="Repetir contraseña"
+								maxlength="20"
+								name="Repetir contraseña"
+								required
+							/>
+							<button
+								id="btnGuardar"
+								class="btn btn-secondary btn-modal"
+								type="submit"
+								onclick="guardar();"
+							>
+								Guardar
+							</button>
+							<button type="reset" class="btn btn-secondary mt-3">
+								Cancelar
+							</button>
+						</form>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- LIBRERIA DE LAS ALERTAR PERSONALIZADAS-->
+		<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+		<script src="/js/sweetAlert.js"></script>
+		<!-- Optional JavaScript; choose one of the two! -->
+		<!-- Option 1: Bootstrap Bundle with Popper -->
+		<!-- src de js-->
+		<script src="/js/main.js"></script>
+		
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+			crossorigin="anonymous"
+		></script>
+	</body>
+</html>

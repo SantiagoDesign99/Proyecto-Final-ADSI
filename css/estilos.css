@@ -1,0 +1,843 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins');
+/* ======= Variables css =======  */
+:root {
+	/* ======= colores =======  */
+	--verde-oliva: #768e52;
+	--verde-claro: #d7ddd0;
+	--hover: #576540;
+	--negro: black;
+	--blanco: white;
+	--naranja: #9b4a24;
+	--gris-suave: #d4d4d484;
+	--gris: rgb(170, 170, 170);
+	--gris-hover: rgb(85, 85, 85);
+	--rojo-claro: rgb(245, 201, 201);
+	--azul: rgb(11, 117, 237);
+	--azul-hover: rgb(0, 75, 151);
+	/* ======= tamaño de letra =======  */
+	--h1-font-size: 40px;
+	--h2-font-size: 35px;
+	--h3-font-size: 27px;
+	--lg-font-size: 20px;
+	--sm-font-size: 16px;
+}
+/* ====== Base ======  */
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'Poppins' !important;
+	background: linear-gradient(to top, #e8e8e8 0%, #e8e8e8 100%);
+}
+
+input:focus,
+select:focus,
+select,
+input.form-control:focus {
+	outline: none !important;
+	outline-width: 0 !important;
+	box-shadow: none;
+	-moz-box-shadow: none;
+	-webkit-box-shadow: none;
+}
+
+/* -------------------------------------------------*/
+/* ====== INICIO DE SESIÓN ======*/
+/* ====== Estilos de inicio de sesión ====== */
+.register-login {
+	background: var(--blanco);
+}
+/* ====== Estilos de la imagen o logo (inicio de sesión) ====== */
+.register-login .padding-none {
+	padding: 0;
+}
+.register-login .container__image {
+	width: 100%;
+	min-height: 100vh;
+	height: 100%;
+	overflow: hidden;
+	position: relative;
+}
+.register-login .image--points {
+	background-image: url(/img/logo.jpeg);
+	background-size: cover;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+/* ====== Estilos del titulo (inicio de sesión) ====== */
+.register-login .register-login-h1 {
+	color: var(--verde-oliva);
+	text-align: center;
+	font-size: var(--h1-font-size);
+	margin-bottom: 20px;
+}
+/* ====== Estilos formulario  (inicio de sesión) ====== */
+.register-login .form-group {
+	position: relative;
+	padding-top: 10px;
+	outline: none;
+	border: none;
+	margin-bottom: 25px;
+}
+.register-login .form-control {
+	border: none;
+	outline: none;
+	border-radius: 0px;
+	font-size: var(--sm-font-size);
+	border-bottom: 1.5px solid black;
+	-webkit-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+	padding-left: 0;
+}
+.register-login .form-control:active,
+.register-login .form-control:focus,
+.register-login .form-control:valid {
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	outline: none;
+	border-bottom: 1.8px solid var(--verde-oliva);
+}
+/* ====== Estilos texto olvido su contraseña (inicio de sesión) ====== */
+.register-login .forgot__password--link {
+	text-decoration: none;
+	margin-left: auto;
+	font-size: var(--sm-font-size);
+	color: var(--negro);
+}
+.register-login .forgot__password--link:hover {
+	text-decoration: none;
+	color: var(--verde-oliva);
+	font-weight: bold;
+}
+/* ====== Estilos btn ingresar (inicio de sesión) ====== */
+.register-login .btn-login,
+.register-login .btn-signup,
+.register-login .btn-signup--register {
+	border: none;
+	outline: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	width: 100%;
+	text-align: center;
+	font-size: var(--lg-font-size);
+	font-weight: 300;
+}
+.register-login .btn-login,
+.register-login .btn-signup--register {
+	background: var(--verde-oliva);
+	color: var(--blanco);
+}
+.register-login .btn-login {
+	margin-top: 30px;
+	border-radius: 5px;
+}
+.register-login .btn-login:hover {
+	background: var(--hover);
+	color: var(--blanco);
+}
+/* ====== Estilos del icono del ojo del input contraseña ======*/
+.icon-eye {
+	position: absolute;
+	right: 2px;
+	top: 46%;
+	transform: translateY(-20%);
+	cursor: pointer;
+	transition: 0.4s ease all;
+}
+.icon-eye:hover {
+	color: var(--hover);
+}
+/* -------------------------------------------------*/
+/* ====== Estilos del los btns (modal)======*/
+.btn {
+	width: 100%;
+	height: 3rem;
+	font-size: 1em;
+}
+.btn-modal {
+	margin-top: 40px;
+	background-color: var(--verde-oliva) !important;
+	border: none !important;
+	font-size: var(--lg-font-size) !important;
+}
+.btn-modal:hover {
+	background-color: var(--hover) !important;
+}
+/* -------------------------------------------------*/
+/* ====== PANEL PRINCIPAL ======*/
+/* ====== Estilos del menú lateral ======*/
+ul {
+	padding-left: 0%;
+}
+
+.fa-2x {
+	font-size: 4em;
+}
+.fa {
+	position: relative;
+	display: table-cell;
+	width: 60px;
+	height: 50px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 20px;
+}
+.main-menu:hover,
+nav.main-menu.expanded {
+	width: 250px;
+	overflow: visible;
+}
+.main-menu {
+	background: #ffffff;
+	border-right: 1px solid #e5e5e5;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	height: 100%;
+	left: 0;
+	width: 60px;
+	overflow: hidden;
+	-webkit-transition: 0.05s linear;
+	transition: 0.05s linear;
+	-webkit-transform: translateZ(0) scale(1, 1);
+	z-index: 1000;
+	box-shadow: 0 0.2rem 1.5rem rgba(0, 0, 0, 0.1);
+	position: fixed;
+}
+.main-menu ul {
+	margin: 7px 0;
+}
+.main-menu li {
+	position: relative;
+	display: block;
+	width: 250px;
+}
+.main-menu li a {
+	position: relative;
+	display: table;
+	border-collapse: collapse;
+	border-spacing: 0;
+	color: var(--gris);
+	font-family: arial;
+	font-size: var(--sm-font-size);
+	text-decoration: none;
+}
+.main-menu .nav-icon {
+	position: relative;
+	display: table-cell;
+	width: 60px;
+	height: 36px;
+	text-align: center;
+	vertical-align: middle;
+	font-size: 18px;
+}
+.main-menu .nav-text {
+	position: relative;
+	display: table-cell;
+	vertical-align: middle;
+	width: 190px;
+	font-family: 'Poppins';
+}
+.main-menu ul.logout {
+	position: absolute;
+	left: 0;
+	bottom: 0;
+}
+.main-menu li a:hover {
+	border-radius: 0px 40px 40px 0;
+	margin-right: 10px;
+	background: var(--gris-suave);
+	color: var(--verde-oliva);
+	font-weight: bold;
+}
+.logout a {
+	color: rgb(105, 105, 105) !important;
+}
+.logout a:hover {
+	border-radius: 0px 40px 40px 0;
+	margin-right: 10px;
+	background: var(--gris-suave) !important;
+	color: var(--naranja) !important;
+	font-weight: bold;
+}
+/* ====== Estilos de apartado activo ======*/
+.apart-activo {
+	border-radius: 0px 40px 40px 0;
+	margin-right: 10px;
+	background: var(--verde-oliva);
+	color: var(--blanco) !important;
+	font-weight: bold;
+}
+.apart-activo:hover {
+	background: var(--verde-oliva) !important;
+	color: var(--blanco) !important;
+	font-weight: bold;
+}
+/* -------------------------------------------------*/
+/* ====== Estilos box o modulos (panel principal) ======*/
+.container-box {
+	display: flex;
+	margin-left: 20px;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 20px;
+}
+.container-box a {
+	text-decoration: none;
+}
+.box {
+	width: 290px;
+	height: 180px;
+	padding: 10px;
+	margin: 10px;
+	background: var(--blanco);
+	color: var(--verde-oliva);
+	text-align: center;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	transition: all 300ms;
+	box-shadow: 0 0.2rem 15px rgba(0, 0, 0, 0.213);
+}
+.box:hover {
+	transform: translate(5px, -5px);
+	box-shadow: 0 0.2rem 1.5rem rgba(0, 0, 0, 0.3);
+}
+.box .icon,
+.box h3 {
+	position: relative;
+	z-index: 1;
+	transition: all 300ms;
+}
+.box .icon {
+	font-size: 40px;
+	color: var(--verde-oliva);
+	transform: translateY(30px);
+}
+.box:hover .icon {
+	color: var(--blanco);
+}
+.box h3 {
+	margin-top: 10px;
+}
+.box h3 {
+	font-size: var(--h3-font-size);
+	transform: translateY(30px);
+}
+.box:hover h3 {
+	color: var(--blanco);
+}
+.box .background-hover {
+	width: 100px;
+	height: 100px;
+	position: absolute;
+	top: 250px;
+	left: -170px;
+	background: linear-gradient(to bottom, #8da36d, #444e2d);
+	border-radius: 100%;
+	transition: all 300ms;
+}
+.box:hover .background-hover {
+	width: 420px;
+	height: 400px;
+	top: -70px;
+	left: -70px;
+}
+/* ====== Color de las cajas o modulos (panel principal) ======*/
+.box1 .background-hover {
+	background: linear-gradient(to bottom, #799a5c, #568332);
+}
+.box2 .background-hover {
+	background: linear-gradient(to bottom, #e08947, #c77d05);
+}
+.box4 .background-hover {
+	background: linear-gradient(to bottom, #e05e47, #c73c05);
+}
+/* ====== Estilos de la inlustración y texto (panel principal) ======*/
+.box-img {
+	margin-top: 20px;
+	margin-left: 75px;
+	margin-right: 50px;
+	display: flex;
+	justify-content: center;
+}
+.box-img img {
+	margin-top: 20px;
+	height: 210px;
+	opacity: 0.8;
+}
+.parrafo-panel {
+	color: var(--verde-oliva);
+	font-size: var(--sm-font-size);
+	margin-top: 5px;
+}
+/* -------------------------------------------------*/
+/* ====== MI PERFIL ======*/
+/* ======  Datos actuales del mi perfil ======*/
+.container-datos {
+	margin-left: 30px;
+	margin-right: 30px;
+	padding-bottom: 15px;
+}
+.title-miPerfil {
+	color: var(--verde-oliva);
+	font-size: var(--h3-font-size);
+	font-weight: bold;
+}
+.box-miPerfil {
+	width: auto;
+	height: 450px;
+	margin-top: 50px;
+	margin-right: 80px;
+	margin-left: 80px;
+	background: var(--blanco);
+	border-radius: 5px;
+}
+/* ====== Estilos fromulario datos mi perfil ======*/
+.input {
+	width: 100%;
+	height: 3rem;
+	font-size: 1em;
+	font-weight: 600;
+	letter-spacing: 1px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid black;
+	color: inherit;
+	font-weight: inherit;
+	font-family: inherit;
+}
+.input:hover {
+	border-bottom: 2.8px solid var(--verde-oliva);
+}
+.input:focus {
+	outline: none;
+}
+.form-modal {
+	position: relative;
+	height: 50%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
+.input-modal {
+	margin-top: 20px;
+}
+.input-datos {
+	margin-top: 30px;
+}
+/* ====== Estilos btn actualizar datos (mi perfil) ======*/
+.btn-perfil {
+	width: 250px;
+	background: var(--verde-oliva);
+	color: var(--blanco);
+	border: none;
+	font-size: var(--sm-font-size);
+}
+.btn-perfil:hover {
+	background: var(--hover);
+	color: var(--blanco);
+}
+/* ====== Estilos del btn flotante (cambiar contraseña) ======*/
+.contenedor {
+	width: 90px;
+	height: 240px;
+	position: absolute;
+	right: 0px;
+	bottom: 0px;
+}
+.botonF1 {
+	width: 300px;
+	height: 50px;
+	border-radius: 30px;
+	background: var(--naranja);
+	right: 0;
+	bottom: 0;
+	position: absolute;
+	margin-right: 16px;
+	margin-bottom: 16px;
+	border: none;
+	outline: none;
+	color: #fff;
+	font-size: 20px;
+	box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+	transition: 0.3s;
+	position: fixed;
+}
+.botonF1:hover {
+	background-color: var(--hover);
+}
+span {
+	transition: 0.5s;
+}
+.botonF1:hover span {
+	transform: rotate(360deg);
+}
+.botonF1:active {
+	transform: scale(1.1);
+}
+
+.animacionVer {
+	transform: scale(1);
+}
+/* -------------------------------------------------*/
+/* ====== Estilos del icono ojo del input nueva contraseña (Modal cambiar contraseña) ======*/
+.eye-nueva {
+	position: absolute;
+	top: 14%;
+	transform: translateY(-20%);
+	cursor: pointer;
+	transition: 0.4s ease all;
+}
+.eye-nueva:hover {
+	color: var(--hover);
+}
+
+.eye-asignar {
+	position: absolute;
+	top: 54%;
+	transform: translateY(-30%);
+	cursor: pointer;
+	transition: 0.4s ease all;
+	left: 98%;
+}
+.eye-asignar:hover {
+	color: var(--hover);
+}
+
+/* ====== Estilos del icono ojo del input repetir contraseña (Modal cambiar contraseña) ======*/
+.eye-repetirC {
+	position: absolute;
+	top: 35%;
+	transform: translateY(20%);
+	cursor: pointer;
+	transition: 0.4s ease all;
+}
+.eye-repetirC:hover {
+	color: var(--hover);
+}
+/* -------------------------------------------------*/
+/* ====== LOS MODULOS ======*/
+/* ====== Estilos del grillas o tablas ======*/
+.box-table {
+	width: auto;
+	height: 100%;
+	margin-top: 50px;
+	margin-right: 23px;
+	margin-left: 80px;
+	background: var(--blanco);
+	border-radius: 5px;
+	box-shadow: 0 0.1rem 1rem rgba(81, 81, 81, 0.1);
+}
+.table-estilo {
+	background: #d6e3c0;
+}
+.title-estilo {
+	padding-left: 26px;
+	color: var(--verde-oliva);
+	font-weight: bold;
+}
+/* ====== Estilos del btns agregar nuevo ======*/
+
+.btn-nuevo {
+	width: 150px;
+	height: 40px;
+	margin-left: 28px;
+	background: var(--verde-oliva);
+	color: var(--blanco);
+	border: none;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+.btn-nuevo:hover {
+	background: var(--hover);
+}
+
+.btn-Remisones {
+	width: 150px;
+	height: 40px;
+	margin-left: 28px;
+	background: var(--naranja);
+	color: var(--blanco);
+	border: none;
+	margin-top: 5px;
+	margin-bottom: 10px;
+}
+
+.btn-Remisones:hover {
+	background: rgb(187, 98, 19);
+}
+
+.btn-success:focus {
+	color: #fff;
+	background-color: var(--verde-oliva) !important;
+}
+/* ====== Estilos btn pagiantion de las tablas ======*/
+.page-link {
+	color: var(--negro);
+	border: 1px solid var(--gris);
+	margin-left: 3px !important;
+}
+.page-link:hover {
+	background: var(--verde-claro);
+	color: var(--verde-oliva);
+	font-weight: bold;
+}
+/* ====== Estilos iconos de (acciones) ======*/
+.btn-editar {
+	color: var(--gris);
+	text-decoration: none;
+	cursor: pointer;
+}
+.btn-editar:hover {
+	color: var(--verde-oliva);
+}
+
+/* -------------------------------------------------*/
+/* ====== Estilos del (modal) agregar nuevo ======*/
+.from-dato {
+	width: 450px;
+	border: 1px solid var(--gris);
+	height: 45px;
+	border-radius: 0;
+}
+.from-dato:hover {
+	border: 2px solid var(--verde-oliva);
+}
+.form-select {
+	width: 450px;
+	border: 1px solid var(--gris);
+	height: 45px;
+	border-radius: 0;
+}
+.form-select:hover {
+	border: 2px solid var(--verde-oliva);
+}
+/* -------------------------------------------------*/
+/* ====== Estilos del la tablas y el plugin (datatables) ======*/
+.form-control-sm {
+	border: 1px solid var(--gris);
+	border-radius: 0;
+	width: 170px;
+	height: 25px;
+}
+.form-control-sm:hover {
+	border: 2px solid var(--verde-oliva);
+}
+.table {
+	padding-top: 10px;
+}
+.page-item.active .page-link {
+	background: var(--verde-oliva);
+	border: 1px solid var(--verde-oliva);
+}
+.page-link {
+	color: var(--negro);
+	border: 1px solid var(--gris);
+	margin-left: 3px !important;
+	border-radius: 0;
+}
+/* -------------------------------------------------*/
+/* ====== Estilos de los estados (tablas) ======*/
+.badge-active {
+	background: var(--verde-claro);
+	color: var(--verde-oliva);
+	font-size: var(--sm-font-size);
+}
+.badge-inactive {
+	background: var(--rojo-claro);
+	color: red;
+	font-size: var(--sm-font-size);
+}
+.badge-procces {
+	background: var(--gris-suave);
+	color: var(--negro);
+	font-size: var(--sm-font-size);
+}
+/* -------------------------------------------------*/
+/* ====== COTIZACIONES ======*/
+/* ====== Estilos btn editar y remisión (acciones)  ======*/
+.btn-accion {
+	width: 100px;
+	height: 35px;
+	margin-left: 10px;
+}
+/* ====== Estilos del (ModaL) cotización ======*/
+.modal-body {
+	margin: 2em;
+}
+/* ====== Estilos liena verde se separeción (ModaL) cotización ======*/
+.datos-cotizacion {
+	border: 1px solid rgb(182, 182, 182);
+	border-radius: 10px;
+	padding: 10px;
+}
+/* ====== Estilos los campos o input cotizacion (ModaL) cotización ======*/
+.input-cotizacion {
+	margin-top: 10px;
+	padding: 5px;
+	width: 300px;
+	border: 1px solid #c9c9c9;
+}
+
+/* ----------------------------------------------- */
+/* ====== Estilos tabla de agregar los articulos (ModaL) cotización ======*/
+.table-contizacion {
+	table-layout: auto;
+	width: 100%;
+	margin-top: 2em;
+	border-top: 2px solid var(--negro);
+}
+/* ====== Estilo para formulario (datos de envio de la cotización) ======*/
+.accordion {
+	margin-top: 2em;
+	border-top: 3px solid var(--verde-oliva);
+}
+.accordion-button {
+	padding: 0%;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	font-size: var(--lg-font-size);
+}
+.accordion-button:not(.collapsed) {
+	padding-bottom: 10px;
+	padding-top: 10px;
+	color: var(--negro);
+	background-color: #e7f1ff;
+	background: var(--blanco);
+}
+.accordion-button:hover {
+	background: var(--blanco);
+	color: var(--negro);
+}
+.accordion-button:focus {
+	padding-bottom: 10px;
+	box-shadow: none;
+	background: var(--verde-claro);
+}
+/* ====== Estilos de los campos cotizacion (modal)  ======*/
+.table-contizacion,
+.th,
+.td {
+	border-collapse: collapse;
+}
+
+.th {
+	padding: 20px 0px;
+	border-bottom: 1px solid rgb(187, 187, 187);
+	border-bottom-style: dashed;
+	font-weight: bold;
+	font-size: var(--sm-font-size);
+	letter-spacing: 2px;
+	text-align: left;
+}
+.td {
+	padding: 10px 0px;
+	border-bottom: 0.5px solid rgb(226, 226, 226);
+	text-align: left;
+}
+/* ====== Estilos de input o campos número y fecha de cotización (modal)  ======*/
+.datos {
+	margin-bottom: 15px;
+	border: none;
+	background: #f5f5f5;
+	padding: 0.5em;
+}
+/* ====== Estilos de input o campos de los datos (modal)  ======*/
+.input-articulo {
+	font-size: var(--sm-font-size);
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border: none;
+	outline: none;
+}
+/* ====== Estilos de btn agregar otro artículo (modal)  ======*/
+.float {
+	text-decoration: none;
+	color: var(--verde-oliva);
+	cursor: pointer;
+}
+.float:hover {
+	text-decoration: none;
+	color: var(--hover);
+}
+/* ====== Estilos de btn o icono de eliminar dato (modal)  ======*/
+.material-icons:hover {
+	color: var(--naranja);
+	cursor: pointer;
+}
+/* ====== Estilos de input o campos subtotal, flete, total (modal)  ======*/
+.total {
+	font-weight: 800;
+	font-size: 20px !important;
+	color: black;
+	text-align: end;
+}
+.precio-total {
+	font-size: var(--h3-font-size);
+}
+/* ====== Estilos del footer de la cotización (modal)  ======*/
+.footer {
+	height: 30px;
+}
+/* ====== Estilos del btn generar pdf (modal)  ======*/
+.btn-imprimir {
+	width: 150px;
+	height: 40px;
+	margin-left: 28px;
+	background: var(--azul);
+	color: var(--blanco);
+	border: none;
+	margin-top: 1px;
+	margin-bottom: 5px;
+	padding: 5px;
+}
+.btn-imprimir:hover {
+	background: var(--azul-hover);
+}
+
+/* =================================================*/
+
+.flete {
+	background: #f4f4f48e;
+}
+
+/* --------------------OJO FALTA (NUEV0) ------------------ */
+
+/* ====== Estilos apartado nueva cotizacion  ======*/
+
+.search {
+	max-width: 20rem;
+	margin-right: 5px;
+}
+.table > :not(:first-child) {
+	border-top: 1px solid var(--gris-hover) !important;
+}
+
+.table-bordered {
+	border: 1px solid #c9c9c9;
+}
+
+/* =================================================*/
+
+.Activo {
+	color: var(--verde-oliva) !important;
+	font-weight: bold;
+}
+
+.Inactivo {
+	color: rgb(192, 43, 43) !important;
+	font-weight: bold;
+}
+
+/* --------------------------------------------------------------- */
+.camposTabla {
+	background: var(--gris-suave);
+}
